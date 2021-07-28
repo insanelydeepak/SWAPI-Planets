@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZrZ-HV-bii">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Star Wars Planets-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlanetsListVC" customModule="Planets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dxP-Qc-fCj">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="lwL-aK-JRA"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iP3-hf-E5E"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dxP-Qc-fCj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="22" id="T39-pW-g8B"/>
+                            <constraint firstItem="dxP-Qc-fCj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jX9-BI-UfC"/>
+                            <constraint firstItem="dxP-Qc-fCj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jfc-ES-VwJ"/>
+                            <constraint firstItem="dxP-Qc-fCj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="keQ-0U-w8c"/>
+                            <constraint firstItem="dxP-Qc-fCj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="par-FG-phM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Star Wars Planets" id="8R9-ql-xXs"/>
+                    <connections>
+                        <outlet property="tblView" destination="dxP-Qc-fCj" id="FbJ-uV-oYS"/>
+                        <segue destination="Vh9-yF-gSR" kind="show" identifier="segueDetail" id="ngz-Tr-d6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901.60000000000002" y="73.313343328335833"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hgu-i5-SX2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZrZ-HV-bii" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNe-S3-nIi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3uG-EY-EU9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HpH-fC-tyH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="73.660714285714278"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="k1b-HR-PFv">
+            <objects>
+                <viewController storyboardIdentifier="PlanetDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vh9-yF-gSR" customClass="PlanetDetailVC" customModule="Planets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="laA-Hk-kmr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAs-VZ-gzX">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vh9-yF-gSR" id="8uj-fE-fz6"/>
+                                    <outlet property="delegate" destination="Vh9-yF-gSR" id="I0g-Y0-Wo0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pEj-0p-wDs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cAs-VZ-gzX" firstAttribute="trailing" secondItem="pEj-0p-wDs" secondAttribute="trailing" id="Cwv-JX-ac5"/>
+                            <constraint firstItem="cAs-VZ-gzX" firstAttribute="centerX" secondItem="laA-Hk-kmr" secondAttribute="centerX" id="FFt-ny-FoK"/>
+                            <constraint firstItem="cAs-VZ-gzX" firstAttribute="leading" secondItem="pEj-0p-wDs" secondAttribute="leading" id="IoJ-cr-xce"/>
+                            <constraint firstItem="cAs-VZ-gzX" firstAttribute="centerY" secondItem="laA-Hk-kmr" secondAttribute="centerY" constant="22" id="e3L-R0-Glh"/>
+                            <constraint firstItem="cAs-VZ-gzX" firstAttribute="top" secondItem="pEj-0p-wDs" secondAttribute="top" id="fjb-Kx-7l7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="pPj-ga-98l"/>
+                    <connections>
+                        <outlet property="tblView" destination="cAs-VZ-gzX" id="rS0-cc-FkX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uBS-Gr-M4A" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593" y="73"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
